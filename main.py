@@ -53,8 +53,9 @@ class GetYouTubeSubs:
             self.response.text.replace(r, '')
 
     def savetext(self):
+        safe_title = "".join(c for c in self.video_title if c.isalnum() or c.isspace())
         sentences = nltk.tokenize.sent_tokenize(self.response.text)
-        with open(f'{self.video_title}.txt', 'w+') as file:
+        with open(f'{safe_title}.txt', 'w+') as file:
             for i in range(0, len(sentences), 5):
                 file.write(' '.join(sentences[i:i+5]) + '\n' + '\n')
             file.seek(0)
