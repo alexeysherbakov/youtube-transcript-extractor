@@ -12,7 +12,7 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install:
 ```bash
 requests
 youtube_transcript_api
-nltk
+nltk==3.8.1
 ```
 Also, make sure to download NLTK's tokenizers before you can use them. This can be done by running the following Python command:
 ```bash
